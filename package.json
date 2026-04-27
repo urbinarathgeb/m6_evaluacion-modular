@@ -1,0 +1,16 @@
+{
+  "name": "m6_ev-modular",
+  "version": "1.0.0",
+  "description": "Proyecto desarrollado como trabajo final del módulo 6 del bootcamp Full Stack JavaScript de Talento Digital.",
+  "license": "ISC",
+  "author": "Javier Urbina",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}

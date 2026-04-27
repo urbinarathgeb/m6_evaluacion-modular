@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "dimensions": "1x4x1200mm",
+    "stack_width": 10,
+    "stack_height": 20,
+    "unit_count": 200,
+    "total_cubic_meters": 0.0929,
+    "production_date": "2026-04-27T10:30:00Z",
+    "status": "Available"
+  }
+]
