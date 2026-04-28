@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "dimensions": "1x4x1200mm",
+    "dimensions": "1x4x1200",
     "stack_width": 10,
     "stack_height": 20,
     "unit_count": 200,

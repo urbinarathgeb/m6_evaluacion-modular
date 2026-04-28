@@ -64,11 +64,11 @@ npm install
 
 | Método     | Endpoint         | Descripción                                                |
 |:-----------|:-----------------|:-----------------------------------------------------------|
-| **GET**    | `/api/stock`     | Obtiene el inventario completo de madera.                  |
-| **GET**    | `/api/stock/:id` | Obtiene el detalle de un paquete específico.               |
-| **POST**   | `/api/stock`     | Registra un nuevo paquete (calcula $m^3$ automáticamente). |
-| **PUT**    | `/api/stock/:id` | Actualiza estado o ubicación de un lote.                   |
-| **DELETE** | `/api/stock/:id` | Elimina un registro por venta o error de ingreso.          |
+| **GET**    | `/api/inventory`     | Obtiene el inventario completo de madera.                  |
+| **GET**    | `/api/inventory/:id` | Obtiene el detalle de un paquete específico.               |
+| **POST**   | `/api/inventory`     | Registra un nuevo paquete (calcula $m^3$ automáticamente). |
+| **PUT**    | `/api/inventory/:id` | Actualiza estado o ubicación de un lote.                   |
+| **DELETE** | `/api/inventory/:id` | Elimina un registro por venta o error de ingreso.          |
 
 ## Estructura de Datos (JSON)
 
