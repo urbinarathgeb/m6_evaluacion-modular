@@ -6,7 +6,7 @@ const app = express();
 const { port, env } = config;
 
 app.use(express.json());
-app.use('/', stockRoutes)
+app.use('/api/stock', stockRoutes);
 app.use((req, res) => {
 	res.status(404).json({error: 'Ruta no encontrada'});
 });

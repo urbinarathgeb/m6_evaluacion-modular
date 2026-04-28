@@ -5,5 +5,6 @@ const router = Router();
 
 
 router.get('/', stockController.getAllStock);
+router.get('/:id', stockController.getStockById);
 
 export default router;
