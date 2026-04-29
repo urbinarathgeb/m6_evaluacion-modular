@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "dimensions": "1x4x1200",
-    "stack_width": 10,
-    "stack_height": 20,
-    "unit_count": 200,
-    "total_cubic_meters": 0.0929,
+    "dimensions": "18x90x3600",
+    "stack_width": 11,
+    "stack_height": 34,
+    "unit_count": 374,
+    "total_cubic_meters": 2.18,
     "production_date": "2026-04-27T10:30:00Z",
     "status": "Available"
   }
