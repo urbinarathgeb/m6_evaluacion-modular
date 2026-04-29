@@ -27,7 +27,7 @@
     "unit_count": 72,
     "total_cubic_meters": 2.33,
     "production_date": "2026-04-29T15:18:02.173",
-    "status": "Disponible"
+    "status": "Vendido"
   },
   {
     "id": 5,
@@ -37,6 +37,6 @@
     "unit_count": 100,
     "total_cubic_meters": 1.13,
     "production_date": "2026-04-29T15:18:41.410",
-    "status": "Disponible"
+    "status": "Vendido"
   }
 ]

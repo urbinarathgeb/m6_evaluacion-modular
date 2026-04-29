@@ -80,3 +80,33 @@ export const deleteStack = async (req, res) => {
 		});
 	}
 }
+
+export const updateStackStatus = async (req, res) => {
+	try {
+		const {id} = req.params;
+		const {status} = req.body;
+		const inventoryData = await inventoryService.getInventoryData();
+		const stackToUpdate = inventoryData.find(stock => stock.id === parseInt(id));
+
+		if (!stackToUpdate) {
+			return res.status(404).json({message: 'Stack no encontrado'});
+		}
+
+		if (stackToUpdate.status === status) {
+			return res.status(400).json({message: `El estado del stack ${id} ya es ${status}`});
+		}
+
+		inventoryData.find(stack => stack.id === parseInt(id)).status = status;
+		await inventoryService.setInventoryData(inventoryData);
+
+		res.status(200).json({
+			message: `Estado del stack con id ${id} actualizado a ${status}` ,
+			'data-updated': stackToUpdate
+		});
+	} catch (error) {
+		res.status(500).json({
+			message: 'Error al actualizar el estado del stack',
+			error: error.message
+		});
+	}
+}
