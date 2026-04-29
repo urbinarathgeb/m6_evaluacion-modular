@@ -2,29 +2,28 @@
   {
     "dimensions": "18x90x3600",
     "status": "Disponible",
-    "total_packages": 1,
-    "total_m3": 2.18,
-    "total_units": 374
-  },
-  {
-    "dimensions": "90x100x3600",
-    "status": "Disponible",
+    "stack_width": 11,
+    "stack_height": 34,
     "total_packages": 4,
-    "total_m3": 9.32,
-    "total_units": 288
+    "total_m3": 8.72,
+    "total_units": 1496
   },
   {
-    "dimensions": "90x100x3600",
-    "status": "Vendido",
+    "dimensions": "18x90x3600",
+    "status": "Disponible",
+    "stack_width": 10,
+    "stack_height": 10,
     "total_packages": 1,
-    "total_m3": 2.33,
-    "total_units": 72
+    "total_m3": 0.58,
+    "total_units": 100
   },
   {
-    "dimensions": "45x70x3600",
+    "dimensions": "18x90x3600",
     "status": "Vendido",
+    "stack_width": 10,
+    "stack_height": 10,
     "total_packages": 1,
-    "total_m3": 1.13,
+    "total_m3": 0.58,
     "total_units": 100
   }
 ]

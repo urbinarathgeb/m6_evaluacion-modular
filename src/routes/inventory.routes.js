@@ -6,9 +6,9 @@ const router = Router();
 
 
 router.get('/', inventoryController.getAllInventory);
-router.get('/:id', inventoryController.getInventoryById);
+router.get('/:id', val.validateId, inventoryController.getInventoryById);
 router.post('/', val.validateDimensions, inventoryController.createStack);
-router.patch('/:id/status', inventoryController.updateStackStatus)
-router.delete('/:id', inventoryController.deleteStack);
+router.patch('/:id/status', val.validateId, val.validateStatus, inventoryController.updateStackStatus)
+router.delete('/:id', val.validateId, inventoryController.deleteStack);
 
 export default router;

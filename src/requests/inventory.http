@@ -17,6 +17,27 @@ Content-Type: application/json
   "dimensions": "90x100x3600"
 }
 
+### Crear stack solo con dimensiones. Resto de propiedades por default.
+
+POST {{url}}/api/inventory
+Content-Type: application/json
+
+{
+  "dimensions": "18x90x3600"
+}
+
+### Crear stack solo con dimensiones. Resto de propiedades por default.
+
+POST {{url}}/api/inventory
+Content-Type: application/json
+
+{
+  "dimensions": "18x90x3600",
+  "stack_width": 10,
+  "stack_height": 10
+}
+
+
 ### Crear stack con dimensiones y tamaño de stack.
 
 POST {{url}}/api/inventory
@@ -55,7 +76,16 @@ DELETE {{url}}/api/inventory/3
 
 ### VAL || Crear stack sin dimensiones.
 
-PATCH {{url}}/api/inventory/4/status
+PATCH {{url}}/api/inventory/8/status
+Content-Type: application/json
+
+{
+  "status": "Vendido"
+}
+
+###
+
+PATCH {{url}}/api/inventory/6/status
 Content-Type: application/json
 
 {

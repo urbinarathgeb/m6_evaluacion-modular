@@ -62,13 +62,21 @@ npm install
 
 ## API Endpoints
 
-| Método     | Endpoint         | Descripción                                                |
-|:-----------|:-----------------|:-----------------------------------------------------------|
-| **GET**    | `/api/inventory`     | Obtiene el inventario completo de madera.                  |
-| **GET**    | `/api/inventory/:id` | Obtiene el detalle de un paquete específico.               |
-| **POST**   | `/api/inventory`     | Registra un nuevo paquete (calcula $m^3$ automáticamente). |
-| **PUT**    | `/api/inventory/:id` | Actualiza estado o ubicación de un lote.                   |
-| **DELETE** | `/api/inventory/:id` | Elimina un registro por venta o error de ingreso.          |
+### Inventario (`/api/inventory`)
+
+| Método     | Endpoint               | Descripción                                                |
+|:-----------|:-----------------------|:-----------------------------------------------------------|
+| **GET**    | `/api/inventory`       | Obtiene el inventario completo.                            |
+| **GET**    | `/api/inventory/:id`   | Obtiene el detalle de un paquete específico.               |
+| **POST**   | `/api/inventory`       | Registra un nuevo paquete (calcula $m^3$ automáticamente). |
+| **PATCH**  | `/api/inventory/:id/status` | Actualiza el estado de un stack (`Disponible`, `Vendido`, `Reservado`). |
+| **DELETE** | `/api/inventory/:id`   | Elimina un registro.                                       |
+
+### Stock (`/api/stock`)
+
+| Método     | Endpoint               | Descripción                                                |
+|:-----------|:-----------------------|:-----------------------------------------------------------|
+| **GET**    | `/api/stock`           | Obtiene un resumen consolidado por dimensiones y estado.   |
 
 ## Estructura de Datos (JSON)
 
