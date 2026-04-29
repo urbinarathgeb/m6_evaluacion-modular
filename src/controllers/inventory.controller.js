@@ -47,6 +47,36 @@ export const createStack = async (req, res) => {
 			data: newStack
 		});
 	} catch (error) {
-		res.status(500).json({message: 'Error al procesar el paquete', error: error.message});
+		res.status(500).json({
+			message: 'Error al procesar el paquete',
+			error: error.message
+		});
+	}
+};
+
+export const deleteStack = async (req, res) => {
+	try {
+
+		const {id} = req.params;
+		const inventoryData = await inventoryService.getInventoryData();
+		const stackToDelete = inventoryData.find(stock => stock.id === parseInt(id));
+
+		if (!stackToDelete) {
+			return res.status(404).json({message: 'Stack no encontrado'});
+		}
+
+		const filteredInventory = inventoryData.filter(stack => stack.id !== stackToDelete.id)
+		await inventoryService.setInventoryData(filteredInventory);
+
+		res.status(200).json({
+			message: 'Stack eliminado correctamente',
+			'deleted-stack': stackToDelete,
+			'current-inventory': filteredInventory
+		});
+	} catch (error) {
+		res.status(500).json({
+			message: 'Error al eliminar el stack',
+			error: error.message
+		});
 	}
 }

@@ -1,32 +1,36 @@
-GET http://localhost:3000/api/inventory
+@baseUrl = http://localhost:
+@port = 3000
+@url = {{baseUrl}}{{port}}
+
+GET {{url}}/api/inventory
 
 ###
 
-GET http://localhost:3000/api/inventory/1
+GET {{url}}/api/inventory/1
 
 ### Crear stack solo con dimensiones. Resto de propiedades por default.
 
-POST http://localhost:3000/api/inventory
+POST {{url}}/api/inventory
 Content-Type: application/json
 
 {
-  "dimensions": "19x95x3200"
+  "dimensions": "90x100x3600"
 }
 
 ### Crear stack con dimensiones y tamaño de stack.
 
-POST http://localhost:3000/api/inventory
+POST {{url}}/api/inventory
 Content-Type: application/json
 
 {
-  "dimensions": "19x95x3200",
+  "dimensions": "45x70x3600",
   "stack_width": 10,
   "stack_height": 10
 }
 
-### Crear stack con dimensiones no permitidas.
+### VAL || Crear stack con dimensiones no permitidas.
 
-POST http://localhost:3000/api/inventory
+POST {{url}}/api/inventory
 Content-Type: application/json
 
 {
@@ -35,12 +39,16 @@ Content-Type: application/json
   "stack_height": 10
 }
 
-### Crear stack sin dimensiones.
+### VAL || Crear stack sin dimensiones.
 
-POST http://localhost:3000/api/inventory
+POST {{url}}/api/inventory
 Content-Type: application/json
 
 {
   "stack_width": 10,
   "stack_height": 10
 }
+
+### Eliminar stack por id
+
+DELETE {{url}}/api/inventory/3

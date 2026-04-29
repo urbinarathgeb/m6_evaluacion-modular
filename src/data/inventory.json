@@ -7,6 +7,36 @@
     "unit_count": 374,
     "total_cubic_meters": 2.18,
     "production_date": "2026-04-27T10:30:00Z",
-    "status": "Available"
+    "status": "Disponible"
+  },
+  {
+    "id": 2,
+    "dimensions": "90x100x3600",
+    "stack_width": 9,
+    "stack_height": 8,
+    "unit_count": 72,
+    "total_cubic_meters": 2.33,
+    "production_date": "2026-04-29T15:14:38.994",
+    "status": "Disponible"
+  },
+  {
+    "id": 4,
+    "dimensions": "90x100x3600",
+    "stack_width": 9,
+    "stack_height": 8,
+    "unit_count": 72,
+    "total_cubic_meters": 2.33,
+    "production_date": "2026-04-29T15:18:02.173",
+    "status": "Disponible"
+  },
+  {
+    "id": 5,
+    "dimensions": "45x70x3600",
+    "stack_width": 10,
+    "stack_height": 10,
+    "unit_count": 100,
+    "total_cubic_meters": 1.13,
+    "production_date": "2026-04-29T15:18:41.410",
+    "status": "Disponible"
   }
 ]
