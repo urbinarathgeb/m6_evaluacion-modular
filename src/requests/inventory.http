@@ -61,3 +61,7 @@ Content-Type: application/json
 {
   "status": "Vendido"
 }
+
+###
+
+GET {{url}}/api/stock

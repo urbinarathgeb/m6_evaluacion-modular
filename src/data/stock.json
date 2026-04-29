@@ -1,0 +1,30 @@
+[
+  {
+    "dimensions": "18x90x3600",
+    "status": "Disponible",
+    "total_packages": 1,
+    "total_m3": 2.18,
+    "total_units": 374
+  },
+  {
+    "dimensions": "90x100x3600",
+    "status": "Disponible",
+    "total_packages": 4,
+    "total_m3": 9.32,
+    "total_units": 288
+  },
+  {
+    "dimensions": "90x100x3600",
+    "status": "Vendido",
+    "total_packages": 1,
+    "total_m3": 2.33,
+    "total_units": 72
+  },
+  {
+    "dimensions": "45x70x3600",
+    "status": "Vendido",
+    "total_packages": 1,
+    "total_m3": 1.13,
+    "total_units": 100
+  }
+]
