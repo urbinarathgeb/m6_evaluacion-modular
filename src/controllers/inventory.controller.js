@@ -10,24 +10,12 @@ export const getAllInventory = asyncWrapper(async (req, res) => {
 
 export const getInventoryById = asyncWrapper(async (req, res) => {
 	const {id} = req.params;
-	const inventoryData = await inventoryService.getInventoryData();
-	const stack = inventoryData.find(stock => stock.id === parseInt(id));
-
-	if (!stack) {
-		const error = new Error('Stack no encontrado');
-		error.status = 404;
-		throw error;
-	}
-
-	res.status(200).json({
-		id: stack.id,
-		data: stack
-	});
+	const stack = await inventoryService.findById(id);
+	res.status(200).json(stack);
 });
 
 export const createStack = asyncWrapper(async (req, res) => {
-	const {dimensions} = req.body
-
+	const {dimensions} = req.body;
 	const inventoryData = await inventoryService.getInventoryData();
 	const newId = inventoryData.length > 0 ? Math.max(...inventoryData.map(i => i.id)) + 1 : 1;
 	const calculatedStackData = inventoryService.calculateStackData(req.body);
@@ -49,23 +37,15 @@ export const createStack = asyncWrapper(async (req, res) => {
 
 export const deleteStack = asyncWrapper(async (req, res) => {
 	const {id} = req.params;
+	const deletedStack = await inventoryService.findById(id);
 	const inventoryData = await inventoryService.getInventoryData();
-	const stackToDelete = inventoryData.find(stock => stock.id === parseInt(id));
-
-	if (!stackToDelete) {
-		const error = new Error('Stack no encontrado');
-		error.status = 404;
-		throw error;
-	}
-
-	const filteredInventory = inventoryData.filter(stack => stack.id !== stackToDelete.id)
+	const filteredInventory = inventoryData.filter(stack => stack.id !== deletedStack.id);
 	await inventoryService.setInventoryData(filteredInventory);
 	await stockService.updateStockSummary();
 
 	res.status(200).json({
 		message: 'Stack eliminado correctamente',
-		'deleted-stack': stackToDelete,
-		'current-inventory': filteredInventory
+		data: deletedStack
 	});
 });
 
@@ -73,7 +53,7 @@ export const updateStackStatus = asyncWrapper(async (req, res) => {
 	const {id} = req.params;
 	const {status} = req.body;
 	const inventoryData = await inventoryService.getInventoryData();
-	const index = inventoryData.findIndex(stock => stock.id === parseInt(id));
+	const index = inventoryData.findIndex(stack => stack.id === parseInt(id));
 
 	if (index === -1) {
 		const error = new Error('Stack no encontrado');
@@ -92,7 +72,7 @@ export const updateStackStatus = asyncWrapper(async (req, res) => {
 	await stockService.updateStockSummary();
 
 	res.status(200).json({
-		message: `Estado del stack con id ${id} actualizado a ${status}` ,
+		message: `Estado del stack con id ${id} actualizado a ${status}`,
 		'data-updated': inventoryData[index]
 	});
 });

@@ -2,7 +2,6 @@ import fs from 'fs/promises';
 import config from '../config/config.js';
 import { ALLOWED_DIMENSIONS } from '../config/constants.js';
 
-
 const {dataPath} = config.paths;
 
 export const calculateStackData = (body) => {
@@ -19,8 +18,7 @@ export const calculateStackData = (body) => {
 	const unitCount = finalWidth * finalHeight;
 	const [thickness, broad, length] = normalizedDimensions.split('x').map(Number);
 	const m3 = (thickness / 1000) * (broad / 1000) * (length / 1000) * unitCount;
-	const currentDate = getCurrentDate()
-
+	const currentDate = getCurrentDate();
 
 	return {
 		stack_width: finalWidth,
@@ -29,20 +27,26 @@ export const calculateStackData = (body) => {
 		total_cubic_meters: Number(m3.toFixed(2)),
 		production_date: currentDate,
 		status: 'Disponible'
-	}
+	};
 };
 
 export const getCurrentDate = () => {
 	const date = new Date();
-	const offset = date.getTimezoneOffset() * 60000; // Offset en milisegundos
+	const offset = date.getTimezoneOffset() * 60000;
 	const fechaLocal = new Date(date.getTime() - offset);
+	return fechaLocal.toISOString().slice(0, -1);
+};
 
-	return fechaLocal.toISOString().slice(0, -1); // Quitamos la "Z" del final
-
-// Resultado: "2026-04-29T14:30:00.000" (sin el desfase de UTC)
-
-}
-
+export const findById = async (id) => {
+	const inventory = await getInventoryData();
+	const item = inventory.find(stack => stack.id === parseInt(id));
+	if (!item) {
+		const error = new Error('Stack no encontrado');
+		error.status = 404;
+		throw error;
+	}
+	return item;
+};
 
 export const getInventoryData = async () => {
 	try {
@@ -60,7 +64,6 @@ export const getInventoryData = async () => {
 export const setInventoryData = async (inventory) => {
 	try {
 		await fs.writeFile(`${dataPath}/inventory.json`, JSON.stringify(inventory, null, 2), 'utf-8');
-
 	} catch (error) {
 		console.error('Error al escribir en el archivo de inventory:', error);
 		throw new Error('No se pudo guardar en la base de datos de inventory');
