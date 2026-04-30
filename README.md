@@ -4,7 +4,8 @@
 
 TimberStock es una API RESTful diseñada para optimizar el control de stock en aserraderos de madera dimensionada. El
 sistema resuelve la problemática del cálculo manual de metros cúbicos ($m^3$) y la falta de visibilidad del inventario
-diario, permitiendo registrar la producción de paquetes de madera y obtener métricas de volumen automáticas.
+diario, permitiendo registrar la producción de paquetes de madera, obtener métricas de volumen automáticas y trazabilidad de
+los movimientos de stock.
 
 ## Justificación Técnica
 

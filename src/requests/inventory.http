@@ -2,11 +2,13 @@
 @port = 3000
 @url = {{baseUrl}}{{port}}
 
+### Obtener todo el inventario
+
 GET {{url}}/api/inventory
 
-###
+### Obtener stack por ID
 
-GET {{url}}/api/inventory/1
+GET {{url}}/api/inventory/20
 
 ### Crear stack solo con dimensiones. Resto de propiedades por default.
 
@@ -24,17 +26,6 @@ Content-Type: application/json
 
 {
   "dimensions": "18x90x3600"
-}
-
-### Crear stack solo con dimensiones. Resto de propiedades por default.
-
-POST {{url}}/api/inventory
-Content-Type: application/json
-
-{
-  "dimensions": "18x90x3600",
-  "stack_width": 10,
-  "stack_height": 10
 }
 
 
@@ -74,9 +65,9 @@ Content-Type: application/json
 
 DELETE {{url}}/api/inventory/3
 
-### VAL || Crear stack sin dimensiones.
+### Modificar el status de un stack por ID
 
-PATCH {{url}}/api/inventory/8/status
+PATCH {{url}}/api/inventory/20/status
 Content-Type: application/json
 
 {
@@ -92,6 +83,6 @@ Content-Type: application/json
   "status": "Vendido"
 }
 
-###
+### Obtener el stock de stacks
 
 GET {{url}}/api/stock

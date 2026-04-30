@@ -20,16 +20,6 @@
     "status": "Disponible"
   },
   {
-    "id": 3,
-    "dimensions": "18x90x3600",
-    "stack_width": 11,
-    "stack_height": 34,
-    "unit_count": 374,
-    "total_cubic_meters": 2.18,
-    "production_date": "2026-04-29T18:07:35.062",
-    "status": "Disponible"
-  },
-  {
     "id": 4,
     "dimensions": "18x90x3600",
     "stack_width": 11,
@@ -58,5 +48,55 @@
     "total_cubic_meters": 0.58,
     "production_date": "2026-04-29T18:07:55.303",
     "status": "Vendido"
+  },
+  {
+    "id": 7,
+    "dimensions": "90x100x3600",
+    "stack_width": 9,
+    "stack_height": 8,
+    "unit_count": 72,
+    "total_cubic_meters": 2.33,
+    "production_date": "2026-04-30T16:54:28.665",
+    "status": "Disponible"
+  },
+  {
+    "id": 8,
+    "dimensions": "45x70x3600",
+    "stack_width": 10,
+    "stack_height": 10,
+    "unit_count": 100,
+    "total_cubic_meters": 1.13,
+    "production_date": "2026-04-30T16:56:59.872",
+    "status": "Vendido"
+  },
+  {
+    "id": 9,
+    "dimensions": "18x90x3600",
+    "stack_width": 11,
+    "stack_height": 34,
+    "unit_count": 374,
+    "total_cubic_meters": 2.18,
+    "production_date": "2026-04-30T17:39:38.292",
+    "status": "Disponible"
+  },
+  {
+    "id": 10,
+    "dimensions": "18x90x3600",
+    "stack_width": 11,
+    "stack_height": 34,
+    "unit_count": 374,
+    "total_cubic_meters": 2.18,
+    "production_date": "2026-04-30T17:39:41.591",
+    "status": "Disponible"
+  },
+  {
+    "id": 11,
+    "dimensions": "18x90x3600",
+    "stack_width": 11,
+    "stack_height": 34,
+    "unit_count": 374,
+    "total_cubic_meters": 2.18,
+    "production_date": "2026-04-30T17:39:42.872",
+    "status": "Disponible"
   }
 ]
