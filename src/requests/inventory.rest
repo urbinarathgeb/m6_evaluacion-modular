@@ -1,0 +1,88 @@
+@baseUrl = http://localhost:
+@port = 3000
+@url = {{baseUrl}}{{port}}
+
+### Obtener todo el inventario
+
+GET {{url}}/api/inventory
+
+### Obtener stack por ID
+
+GET {{url}}/api/inventory/20
+
+### Crear stack solo con dimensiones. Resto de propiedades por default.
+
+POST {{url}}/api/inventory
+Content-Type: application/json
+
+{
+  "dimensions": "90x100x3600"
+}
+
+### Crear stack solo con dimensiones. Resto de propiedades por default.
+
+POST {{url}}/api/inventory
+Content-Type: application/json
+
+{
+  "dimensions": "18x90x3600"
+}
+
+
+### Crear stack con dimensiones y tamaño de stack.
+
+POST {{url}}/api/inventory
+Content-Type: application/json
+
+{
+  "dimensions": "45x70x3600",
+  "stack_width": 10,
+  "stack_height": 10
+}
+
+### VAL || Crear stack con dimensiones no permitidas.
+
+POST {{url}}/api/inventory
+Content-Type: application/json
+
+{
+  "dimensions": "19x95x1600",
+  "stack_width": 10,
+  "stack_height": 10
+}
+
+### VAL || Crear stack sin dimensiones.
+
+POST {{url}}/api/inventory
+Content-Type: application/json
+
+{
+  "stack_width": 10,
+  "stack_height": 10
+}
+
+### Eliminar stack por id
+
+DELETE {{url}}/api/inventory/3
+
+### Modificar el status de un stack por ID
+
+PATCH {{url}}/api/inventory/20/status
+Content-Type: application/json
+
+{
+  "status": "Vendido"
+}
+
+###
+
+PATCH {{url}}/api/inventory/6/status
+Content-Type: application/json
+
+{
+  "status": "Vendido"
+}
+
+### Obtener el stock de stacks
+
+GET {{url}}/api/stock
